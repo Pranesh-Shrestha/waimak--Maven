@@ -32,6 +32,9 @@ jobs:
           mvn dependency:go-offline \
           -DexcludeTransitive=true
 
+      - name: Print dependency tree to console
+        run: mvn dependency:tree
+
       - name: Cleanup PSE
         if: always()
         uses: invisirisk/pse-action@latest
